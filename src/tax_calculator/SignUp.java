@@ -149,7 +149,7 @@ public class SignUp extends javax.swing.JFrame {
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setText("Phone Number");
+        jLabel4.setText("PAN CARD ");
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -393,23 +393,23 @@ public class SignUp extends javax.swing.JFrame {
        if(validation()==true)
        {
          conn=MysqlConnect.ConnectDB();
-        String sql ="INSERT into user values(?,?,?,?)";
+        String sql ="INSERT into myuserhai values(?,?,?,?)";
         try {
             
             pst=conn.prepareStatement(sql);
             pst.setString(1,email.getText());
            String  password;
            password=new String(pass.getPassword());
-           pst.setString(2,password);
-           pst.setString(3,nametxt.getText());
-           pst.setString(4,username.getText());
+           pst.setString(4,password);
+           pst.setString(2,nametxt.getText());
+           pst.setString(3,username.getText());
            
             System.out.println(pass.getPassword());
             
            
            
           pst.executeUpdate();
-          JOptionPane.showMessageDialog(null, "Welcome bro ");
+          JOptionPane.showMessageDialog(null, "Sucessfully created your account ");
           
           new Login().setVisible(true);
            this.dispose();

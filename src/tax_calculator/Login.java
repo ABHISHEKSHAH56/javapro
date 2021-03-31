@@ -180,7 +180,7 @@ public class Login extends javax.swing.JFrame {
         
         validation();
         conn=MysqlConnect.ConnectDB();
-        String sql ="Select * from user where email=? and password=?";
+        String sql ="Select * from myuserhai where email=? and password=?";
         try {
             pst=conn.prepareStatement(sql);
             pst.setString(1,txtuser.getText());
